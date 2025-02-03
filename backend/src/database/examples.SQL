@@ -1,0 +1,9 @@
+-- simple database
+
+CREATE TABLE TEST(
+    ID INT PRIMARY KEY,
+    NAME VARCHAR(255) NOT NULL,
+    AGE INT NOT NULL
+)
+
+INSERT INTO TEST VALUES (1, 'John', 20), (2, 'Jane', 30), (3, 'Doe', 40);
