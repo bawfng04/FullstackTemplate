@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { exampleAPI } from "../../../apis";
 
+import LoadingSpinner from "../../common/LoadingSpinner/LoadingSpinner";
+
 const ExampleComponent = () => {
   const [data, setData] = useState([]);
   async function FetchExample() {
@@ -31,6 +33,7 @@ const ExampleComponent = () => {
           </div>
         ))}
       </ul>
+      <LoadingSpinner />
     </div>
   );
 };
