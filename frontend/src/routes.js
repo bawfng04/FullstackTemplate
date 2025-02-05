@@ -1,11 +1,11 @@
 import { Route } from "react-router-dom";
 
 //components
-import NotFound from "./components/common/404/NotFound";
+import ExampleComponent from "./components/common/ExampleComponent/ExampleComponent";
 
 const routes = (
   <>
-    <Route path="*" element={<NotFound />} />
+    <Route path="*" element={<ExampleComponent />} />
   </>
 );
 
