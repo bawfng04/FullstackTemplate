@@ -29,6 +29,12 @@ const Header = () => {
         <a href="/example" className="header-link">
           Example
         </a>
+        <a href="/login" className="header-link">
+          Login
+        </a>
+        <a href="/register" className="header-link">
+          Register
+        </a>
         {/* End links */}
       </div>
       {/* Header Right Container */}
