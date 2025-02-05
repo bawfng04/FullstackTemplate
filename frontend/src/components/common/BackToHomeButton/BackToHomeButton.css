@@ -1,5 +1,5 @@
 .back-to-home-button {
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -11,6 +11,6 @@
 }
 
 .back-to-home-button:hover {
-  background-color: #0056b3;
+  background-color: var(--primary-color-dark);
   transform: scale(1.1);
 }

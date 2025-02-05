@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { exampleAPI } from "../../../apis";
-
 import LoadingSpinner from "../../common/LoadingSpinner/LoadingSpinner";
 
 const ExampleComponent = () => {
@@ -20,20 +19,22 @@ const ExampleComponent = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Example Component</h1>
-      <p>API URL: {exampleAPI}</p>
-      <ul>
-        {data.map((item, index) => (
-          <div key={index}>
-            <p>-----</p>
-            <li>{item.ID}</li>
-            <li>{item.NAME}</li>
-            <li>{item.AGE}</li>
-          </div>
-        ))}
-      </ul>
-      <LoadingSpinner />
+    <div className="example-component">
+      <div className="example-component-content">
+        <h1>Example Component</h1>
+        <p>API URL: {exampleAPI}</p>
+        <ul>
+          {data.map((item, index) => (
+            <div key={index}>
+              <p>-----</p>
+              <li>{item.ID}</li>
+              <li>{item.NAME}</li>
+              <li>{item.AGE}</li>
+            </div>
+          ))}
+        </ul>
+        <LoadingSpinner />
+      </div>
     </div>
   );
 };
