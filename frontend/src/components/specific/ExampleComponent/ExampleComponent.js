@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { exampleAPI } from "../../../apis";
 import LoadingSpinner from "../../common/LoadingSpinner/LoadingSpinner";
+import Notification from "../../common/Notification/Notification";
 
 const ExampleComponent = () => {
   const [data, setData] = useState([]);
@@ -21,6 +22,12 @@ const ExampleComponent = () => {
   return (
     <div className="example-component">
       <div className="example-component-content">
+        <Notification
+          message="This is an example notification
+        message: ExampleComponent is rendered!
+
+        "
+        />
         <h1>Example Component</h1>
         <p>API URL: {exampleAPI}</p>
         <ul>
