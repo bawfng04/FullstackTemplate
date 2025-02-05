@@ -1,5 +1,7 @@
 import React from "react";
 import "./NotFound.css";
+import BackToHomepageButton from "../../common/BackToHomeButton/BackToHomeButton";
+import LoggoutButton from "../../common/LogoutButton/LoggoutButton";
 
 const NotFound = () => {
   return (
@@ -10,6 +12,8 @@ const NotFound = () => {
         The page you are looking for does not exist. Check the URL and try
         again.
       </p>
+      <BackToHomepageButton />
+      <LoggoutButton />
     </div>
   );
 };

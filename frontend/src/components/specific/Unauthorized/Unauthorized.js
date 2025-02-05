@@ -1,5 +1,7 @@
 import React from "react";
 import "./Unauthorized.css";
+import BackToHomeButton from "../../common/BackToHomeButton/BackToHomeButton";
+import LoggoutButton from "../../common/LogoutButton/LoggoutButton";
 
 const Unauthorized = () => {
   return (
@@ -9,6 +11,8 @@ const Unauthorized = () => {
       <p className="unauthorized-description">
         You are not authorized to view this page.
       </p>
+      <BackToHomeButton />
+      <LoggoutButton />
     </div>
   );
 };
