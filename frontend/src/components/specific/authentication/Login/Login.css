@@ -115,11 +115,12 @@
   color: #3498db;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .login-register-link:hover {
   color: #2980b9;
+  transform: translateY(-5px);
 }
 
 @media (max-width: 480px) {
