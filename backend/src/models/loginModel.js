@@ -25,7 +25,7 @@ class LoginModel {
         const query = `SELECT * FROM USERS WHERE username = '${username}' AND password = '${password}'`;
         const result = await pool.request().query(query);
         if (result.recordset.length > 0) {
-          return { status: 200, message: "Login successful" };
+          return { status: 200, message: "Login successful", username: username };
         } else {
           return { status: 401, message: "Incorrect password" };
           }
