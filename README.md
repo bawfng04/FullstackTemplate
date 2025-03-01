@@ -15,13 +15,25 @@
 3. Configure the environment variables:
     - Create a [.env](http://_vscodecontentref_/0) file in the [backend](http://_vscodecontentref_/1) directory with the following content:
         ```
-        PORT= <yours>
+        # Port to run the server on
+        PORT = <yours>
+
+        # Database configuration
+        DATABASE_SERVER = <yours>
+        DATABASE_NAME = <yours>
+        DATABASE_USER = <yours>
+        DATABASE_PASSWORD = <yours>
+
+        # Secret key for encrypting password
+        SECRET_KEY = <yours>
         ```
 
 4. Start the backend server:
     ```sh
     npm start
     ```
+
+
 
 ## Frontend Setup
 
