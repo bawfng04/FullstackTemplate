@@ -2,10 +2,34 @@ import React, { useState } from "react";
 import "./Register.css";
 import Logo from "../../../../assets/Logo.png";
 
+const registerAPI = process.env.REACT_APP_API_URL + "/register";
+
 const Register = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleRegisterClick = async (e) => {
+    // console.log("API:", registerAPI); //localhost:8000/register
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+    try {
+      const response = await fetch(registerAPI, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+      const data = await response.json();
+      alert(data.message);
+    }
+    catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
 
   const handleLogoClick = () => {
     window.location.href = "/";
@@ -17,7 +41,7 @@ const Register = () => {
       alert("Passwords do not match!");
       return;
     }
-    console.log(email, password);
+    console.log(username, password);
   };
 
   return (
@@ -34,13 +58,13 @@ const Register = () => {
         </div>
 
         <form onSubmit={handleSubmit} className="register-form">
-          <label className="register-form-label">Email</label>
+          <label className="register-form-label">Username</label>
           <input
             className="register-input"
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
           <label className="register-form-label">Password</label>
           <input
@@ -68,7 +92,7 @@ const Register = () => {
             </a>
           </div>
 
-          <button type="submit" className="register-button">
+          <button type="submit" className="register-button" onClick={handleRegisterClick}>
             Register
           </button>
         </form>
