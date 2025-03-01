@@ -40,7 +40,6 @@ class RegisterModel {
 
   async registerUser(username, password) {
     try {
-      const pool = await poolPromise;
       const isExistUsername = await this.checkIfUserExists(username);
       if (isExistUsername) {
         return { status: 409, message: "Username already exists" };
