@@ -10,6 +10,8 @@ const ChangePassword = () => {
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
 
+  const token = localStorage.getItem("token");
+
   const handleChangePasswordClick = async (e) => {
     e.preventDefault();
     if (newPassword !== confirmNewPassword) {
@@ -19,7 +21,10 @@ const ChangePassword = () => {
     try {
       const response = await fetch(changePasswordAPI, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
         body: JSON.stringify({
           username,
           password: currentPassword,
